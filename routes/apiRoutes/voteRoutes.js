@@ -11,7 +11,7 @@ router.post('/vote', ({ body }, res) => {
         return;
     }
 
-    const sql = `INSERT INTO voters (voter_id, candidate_id) VALUES (?,?)`;
+    const sql = `INSERT INTO votes (voter_id, candidate_id) VALUES (?,?)`;
     const params = [body.voter_id, body.candidate_id];
 
     db.query(sql, params, (err, result) => {
